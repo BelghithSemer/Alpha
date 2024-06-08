@@ -1,0 +1,397 @@
+<div class="main-wrapper">
+    
+
+    <div class="breadcrumb-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-12">
+            <div class="breadcrumb-list">
+              <nav aria-label="breadcrumb" class="page-breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="index-2.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item" aria-current="page">Offer</li>
+                  <li class="breadcrumb-item" aria-current="page">
+                    Offers List
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="course-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 col-md-12">
+            <div class="blog" *ngFor="let e of offers">
+              <div class="blog-image">
+                <a href="blog-details.html"
+                  ><img
+                    class="img-fluid"
+                    src="assets/img/blog/blog-05.jpg"
+                    alt="Post Image"
+                /></a>
+              </div>
+              <div class="blog-info clearfix">
+                <div class="post-left">
+                  <ul>
+                    <li>
+                      <div class="post-author">
+                        
+                          <span>{{ e.type }}</span>
+                        
+                      </div>
+                    </li>
+                    <li>
+                      <img
+                        class="img-fluid"
+                        src="assets/img/icon/icon-22.svg"
+                        alt="Img"
+                      />{{ e.date }}
+                    </li>
+                    <li>
+                      <img
+                        class="img-fluid"
+                        src="assets/img/icon/icon-23.svg"
+                        alt="Img"
+                      />{{ e.duree }} mois
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <h3 class="blog-title">
+                <a href="blog-details.html"
+                  >{{ e.company }}</a
+                >
+              </h3>
+              <div class="blog-content blog-read">
+                <p>
+                  {{ e.description }}
+                </p>
+                <a href="blog-details.html" class="read-more btn btn-primary"
+                  >Postuler</a
+                >
+              </div>
+            </div>
+
+            
+          </div>
+
+          <div class="col-lg-3 col-md-12 sidebar-right theiaStickySidebar">
+            <div class="card search-widget blog-search blog-widget">
+              <div class="card-body">
+                <form class="search-form">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      class="form-control"
+                    />
+                    <button type="submit" class="btn btn-primary">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="card post-widget blog-widget">
+              <div class="card-header">
+                <h4 class="card-title">Recent Posts</h4>
+              </div>
+              <div class="card-body">
+                <ul class="latest-posts">
+                  <li>
+                    <div class="post-thumb">
+                      <a href="blog-details.html">
+                        <img
+                          class="img-fluid"
+                          src="assets/img/blog/blog-01.jpg"
+                          alt="Img"
+                        />
+                      </a>
+                    </div>
+                    <div class="post-info">
+                      <h4>
+                        <a href="blog-details.html"
+                          >Learn Webs Applications Development from Experts</a
+                        >
+                      </h4>
+                      <p>
+                        <img
+                          class="img-fluid"
+                          src="assets/img/icon/icon-22.svg"
+                          alt="Img"
+                        />Jun 14, 2022
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="post-thumb">
+                      <a href="blog-details.html">
+                        <img
+                          class="img-fluid"
+                          src="assets/img/blog/blog-02.jpg"
+                          alt="Img"
+                        />
+                      </a>
+                    </div>
+                    <div class="post-info">
+                      <h4>
+                        <a href="blog-details.html"
+                          >Expand Your Career Opportunities With Python</a
+                        >
+                      </h4>
+                      <p>
+                        <img
+                          class="img-fluid"
+                          src="assets/img/icon/icon-22.svg"
+                          alt="Img"
+                        />
+                        3 Dec 2019
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="post-thumb">
+                      <a href="blog-details.html">
+                        <img
+                          class="img-fluid"
+                          src="assets/img/blog/blog-03.jpg"
+                          alt="Img"
+                        />
+                      </a>
+                    </div>
+                    <div class="post-info">
+                      <h4>
+                        <a href="blog-details.html"
+                          >Complete PHP Programming Career Guideline</a
+                        >
+                      </h4>
+                      <p>
+                        <img
+                          class="img-fluid"
+                          src="assets/img/icon/icon-22.svg"
+                          alt="Img"
+                        />
+                        3 Dec 2019
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card category-widget blog-widget">
+              <div class="card-header">
+                <h4 class="card-title">Categories</h4>
+              </div>
+              <div class="card-body">
+                <ul class="categories">
+                  <li>
+                    <a href="javascript:void(0);"
+                      ><i class="fas fa-angle-right"></i> Business
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);"
+                      ><i class="fas fa-angle-right"></i> Courses
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);"
+                      ><i class="fas fa-angle-right"></i> Education
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);"
+                      ><i class="fas fa-angle-right"></i> Graphics Design
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);"
+                      ><i class="fas fa-angle-right"></i> Programming
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);"
+                      ><i class="fas fa-angle-right"></i> Web Design
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card category-widget blog-widget">
+              <div class="card-header">
+                <h4 class="card-title">Archives</h4>
+              </div>
+              <div class="card-body">
+                <ul class="categories">
+                  <li>
+                    <a href="javascript:void(0);"
+                      ><i class="fas fa-angle-right"></i> January 2022
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);"
+                      ><i class="fas fa-angle-right"></i> February 2022
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);"
+                      ><i class="fas fa-angle-right"></i> April 2022
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card tags-widget blog-widget tags-card">
+              <div class="card-header">
+                <h4 class="card-title">Latest Tags</h4>
+              </div>
+              <div class="card-body">
+                <ul class="tags">
+                  <li><a href="javascript:void(0);" class="tag">HTML</a></li>
+                  <li>
+                    <a href="javascript:void(0);" class="tag">Java Script</a>
+                  </li>
+                  <li><a href="javascript:void(0);" class="tag">Css</a></li>
+                  <li>
+                    <a href="javascript:void(0);" class="tag">Jquery</a>
+                  </li>
+                  <li><a href="javascript:void(0);" class="tag">Java</a></li>
+                  <li><a href="javascript:void(0);" class="tag">React</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-widget footer-about">
+                <div class="footer-logo">
+                  <img src="assets/img/logo.svg" alt="logo" />
+                </div>
+                <div class="footer-about-content">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Ut consequat mauris Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Ut consequat mauris
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <div class="footer-widget footer-menu">
+                <h2 class="footer-title">For Instructor</h2>
+                <ul>
+                  <li><a href="instructor-profile.html">Profile</a></li>
+                  <li><a href="login.html">Login</a></li>
+                  <li><a href="register.html">Register</a></li>
+                  <li><a href="instructor-list.html">Instructor</a></li>
+                  <li><a href="instructor-dashboard.html"> Dashboard</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <div class="footer-widget footer-menu">
+                <h2 class="footer-title">For Student</h2>
+                <ul>
+                  <li><a href="student-profile.html">Profile</a></li>
+                  <li><a href="login.html">Login</a></li>
+                  <li><a href="register.html">Register</a></li>
+                  <li><a href="students-list.html">Student</a></li>
+                  <li><a href="student-dashboard.html"> Dashboard</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-widget footer-contact">
+                <h2 class="footer-title">News letter</h2>
+                <div class="news-letter">
+                  <form>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter your email address"
+                      name="email"
+                    />
+                  </form>
+                </div>
+                <div class="footer-contact-info">
+                  <div class="footer-address">
+                    <img
+                      src="assets/img/icon/icon-20.svg"
+                      alt="Img"
+                      class="img-fluid"
+                    />
+                    <p>
+                      3556 Beech Street, San Francisco,<br />
+                      California, CA 94108
+                    </p>
+                  </div>
+                  <p>
+                    <img
+                      src="assets/img/icon/icon-19.svg"
+                      alt="Img"
+                      class="img-fluid"
+                    />
+                    <a
+                      href="https://dreamslms.dreamstechnologies.com/cdn-cgi/l/email-protection"
+                      class="__cf_email__"
+                      data-cfemail="b9ddcbdcd8d4cad5d4caf9dcc1d8d4c9d5dc97dad6d4"
+                      >[email&#160;protected]</a
+                    >
+                  </p>
+                  <p class="mb-0">
+                    <img
+                      src="assets/img/icon/icon-21.svg"
+                      alt="Img"
+                      class="img-fluid"
+                    />
+                    +19 123-456-7890
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="privacy-policy">
+                  <ul>
+                    <li><a href="term-condition.html">Terms</a></li>
+                    <li><a href="privacy-policy.html">Privacy</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="copyright-text">
+                  <p class="mb-0">
+                    &copy; 2024 DreamsLMS. All rights reserved.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
