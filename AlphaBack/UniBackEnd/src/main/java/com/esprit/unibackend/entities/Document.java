@@ -1,5 +1,6 @@
 package com.esprit.unibackend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,6 +27,8 @@ public class Document {
     private String content;
     private Date createdate;
     private Date updatedate;
+
+
 
     @ManyToOne
     private Cours cours;

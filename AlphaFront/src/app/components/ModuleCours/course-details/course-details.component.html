@@ -1,0 +1,361 @@
+<div class="breadcrumb-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-12">
+        <div class="breadcrumb-list">
+          <nav aria-label="breadcrumb" class="page-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+              <li class="breadcrumb-item" aria-current="page">Courses</li>
+              <li class="breadcrumb-item" aria-current="page">{{ cours.title }}</li>
+              <li class="breadcrumb-item" aria-current="page">
+                {{ cours.title }}
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="inner-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="instructor-wrap border-bottom-0 m-0">
+          <div class="about-instructor align-items-center">
+            <div class="abt-instructor-img">
+              <a href="instructor-profile.html"
+                ><img
+                  src="assets/img/user/user1.jpg"
+                  alt="img"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="instructor-detail me-3">
+              <h5><a href="instructor-profile.html">Nicole Brown</a></h5>
+              <p>UX/UI Designer</p>
+            </div>
+            <div class="rating mb-0">
+              <i class="fas fa-star filled"></i>
+              <i class="fas fa-star filled"></i>
+              <i class="fas fa-star filled"></i>
+              <i class="fas fa-star filled"></i>
+              <i class="fas fa-star"></i>
+              <span class="d-inline-block average-rating"
+                ><span>4.5</span> (15)</span
+              >
+            </div>
+          </div>
+          
+          <span class="web-badge mb-3">Add Document</span>
+        </div>
+        <h2>{{ cours.title }}</h2>
+        <p>
+         Description : {{ cours.description }}
+        </p>
+        <p>
+            Planification : {{ cours.planification }}
+           </p>
+        <div
+          class="course-info d-flex align-items-center border-bottom-0 m-0 p-0"
+        >
+          <div class="cou-info">
+            <img src="assets/img/icon/icon-01.svg" alt="Img" />
+            <p>12+ Lesson</p>
+          </div>
+          <div class="cou-info">
+            <img src="assets/img/icon/timer-icon.svg" alt="Img" />
+            <p>{{ cours.startDate | date:'yyyy-MM-dd' }}</p>
+          </div>
+          <div class="cou-info">
+            <img src="assets/img/icon/people.svg" alt="Img" />
+            <p>{{ cours.finishDate | date:'yyyy-MM-dd' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="page-content course-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        
+
+        <div class="card content-sec">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <h5 class="subs-title">Documents Attached to the Course</h5>
+              </div>
+              
+              <div class="col-sm-2 text-sm-end">
+                <a  [routerLink]="['/add-document',cours.id]" class="add-course btn-primary"
+                    >Add New Document</a
+                  >
+              </div>
+            </div>
+            
+            <div class="tab-content">
+              <div class="tab-pane show active" id="today">
+                <div class="table-responsive custom-table">
+                  <table class="table table-nowrap mb-0">
+                    <thead>
+                      <tr>
+                        <th>Category</th>
+                        <th>Content</th>
+                        <th>Date</th>
+                        <th>Last Update</th>
+                        
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let document of documents">
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="tab-title"
+                            >{{ document.category }}</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            href="course-details.html"
+                            class="tab-title title-course"
+                            >{{ document.content }}</a
+                          >
+                        </td>
+                        <td>{{ document.createdate| date:'yyyy-MM-dd' }}</td>
+                        <td>{{ document.updatedate| date:'yyyy-MM-dd' }}</td>
+          
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="action-icon"
+                            ><i class="bx bxs-download"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="month">
+                <div class="table-responsive custom-table">
+                  <table class="table table-nowrap mb-0">
+                    <thead>
+                      <tr>
+                        <th>Order ID</th>
+                        <th>Course Name</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="tab-title"
+                            >#2643</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            href="course-details.html"
+                            class="tab-title title-course"
+                            >Build Responsive Real World Websites with
+                            HTML5 and CSS3</a
+                          >
+                        </td>
+                        <td>March 24, 2024</td>
+                        <td>$34</td>
+                        <td>On Hold</td>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="action-icon"
+                            ><i class="bx bxs-download"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="tab-title"
+                            >#2644</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            href="course-details.html"
+                            class="tab-title title-course"
+                            >Sketch from A to Z (2024): Become an app
+                            designer</a
+                          >
+                        </td>
+                        <td>March 26, 2024</td>
+                        <td>$40</td>
+                        <td>On Hold</td>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="action-icon"
+                            ><i class="bx bxs-download"></i
+                          ></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="year">
+                <div class="table-responsive custom-table">
+                  <table class="table table-nowrap mb-0">
+                    <thead>
+                      <tr>
+                        <th>Order ID</th>
+                        <th>Course Name</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="tab-title"
+                            >#2643</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            href="course-details.html"
+                            class="tab-title title-course"
+                            >Build Responsive Real World Websites with
+                            HTML5 and CSS3</a
+                          >
+                        </td>
+                        <td>March 24, 2024</td>
+                        <td>$34</td>
+                        <td>On Hold</td>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="action-icon"
+                            ><i class="bx bxs-download"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="tab-title"
+                            >#2644</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            href="course-details.html"
+                            class="tab-title title-course"
+                            >Sketch from A to Z (2024): Become an app
+                            designer</a
+                          >
+                        </td>
+                        <td>March 26, 2024</td>
+                        <td>$40</td>
+                        <td>On Hold</td>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="action-icon"
+                            ><i class="bx bxs-download"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="tab-title"
+                            >#2645</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            href="course-details.html"
+                            class="tab-title title-course"
+                            >Learn Angular Fundamentals Beginners
+                            Guide</a
+                          >
+                        </td>
+                        <td>April 12, 2024</td>
+                        <td>$25</td>
+                        <td>Completed</td>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="action-icon"
+                            ><i class="bx bxs-download"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="tab-title"
+                            >#2646</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            href="course-details.html"
+                            class="tab-title title-course"
+                            >Build Responsive Real World Websites with
+                            HTML5 and CSS3</a
+                          >
+                        </td>
+                        <td>April 16, 2024</td>
+                        <td>$35</td>
+                        <td>On Hold</td>
+                        <td>
+                          <a
+                            href="javascript:void(0);"
+                            class="action-icon"
+                            ><i class="bx bxs-download"></i
+                          ></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+              
+             
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+

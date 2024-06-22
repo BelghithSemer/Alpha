@@ -1,0 +1,431 @@
+<div class="page-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 theiaStickySidebar">
+          <div class="settings-widget dash-profile">
+            <div class="settings-menu">
+              <div class="profile-bg">
+                <div class="profile-img">
+                  <a href="instructor-profile.html"
+                    ><img src="assets/img/user/user-17.jpg" alt="Img"
+                  /></a>
+                </div>
+              </div>
+              <div class="profile-group">
+                <div class="profile-name text-center">
+                  <h4>
+                    <a href="instructor-profile.html">Eugene Andre</a>
+                  </h4>
+                  <p>Instructor</p>
+                  <a  [routerLink]="['/add-course']" class="add-course btn-primary"
+                    >Add New Course</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="settings-widget account-settings">
+            <div class="settings-menu">
+              <h3>Dashboard</h3>
+              <ul>
+                <li class="nav-item">
+                  <a href="instructor-dashboard.html" class="nav-link">
+                    <i class="bx bxs-tachometer"></i>Dashboard
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-profile.html" class="nav-link">
+                    <i class="bx bxs-user"></i>My Profile
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="instructor-enrolled-course.html"
+                    class="nav-link"
+                  >
+                    <i class="bx bxs-graduation"></i>Enrolled Courses
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-wishlist.html" class="nav-link">
+                    <i class="bx bxs-heart"></i>Wishlist
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-reviews.html" class="nav-link">
+                    <i class="bx bxs-star"></i>Reviews
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-quiz.html" class="nav-link">
+                    <i class="bx bxs-shapes"></i>My Quiz Attempts
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-orders.html" class="nav-link">
+                    <i class="bx bxs-cart"></i>Order History
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-qa.html" class="nav-link">
+                    <i class="bx bxs-bookmark-alt"></i>Question & Answer
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-referral.html" class="nav-link">
+                    <i class="bx bxs-user-plus"></i>Referrals
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-chat.html" class="nav-link">
+                    <i class="bx bxs-chat"></i>Messages
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-notifications.html" class="nav-link">
+                    <i class="bx bxs-bell"></i>Notifications
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-tickets.html" class="nav-link">
+                    <i class="bx bxs-coupon"></i>Support Tickets
+                  </a>
+                </li>
+              </ul>
+              <h3>Instructor</h3>
+              <ul>
+                <li class="nav-item active">
+                  <a href="instructor-course.html" class="nav-link">
+                    <i class="bx bxs-rocket"></i>My Courses
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-announcements.html" class="nav-link">
+                    <i class="bx bxs-volume-full"></i>Announcements
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-withdraw.html" class="nav-link">
+                    <i class="bx bxs-wallet"></i>Withdrawls
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-quiz-attempts.html" class="nav-link">
+                    <i class="bx bxs-shapes"></i>Quiz Attempts
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-assignment.html" class="nav-link">
+                    <i class="bx bxs-file"></i>Assignments
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="instructor-earnings.html" class="nav-link">
+                    <i class="bx bxs-badge-dollar"></i>Earnings
+                  </a>
+                </li>
+              </ul>
+              <h3>Account Settings</h3>
+              <ul>
+                <li class="nav-item">
+                  <a href="instructor-settings.html" class="nav-link">
+                    <i class="bx bxs-cog"></i>Settings
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="index-2.html" class="nav-link">
+                    <i class="bx bxs-log-out"></i>Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-9 col-lg-9">
+          <div class="settings-widget card-info">
+            <div class="settings-menu p-0">
+              <div class="profile-heading">
+                <h3>Courses</h3>
+                <p>Manage your courses and its updates</p>
+              </div>
+              <div class="checkout-form pb-0">
+                
+                <div class="tab-content">
+                  <div
+                    class="tab-pane fade show active"
+                    id="enroll-courses"
+                  >
+                    <div class="row">
+                      <div class="col-xxl-4 col-md-6 d-flex" *ngFor="let c of Courses">
+                        <div class="course-box flex-fill">
+                          <div class="product">
+                            <div class="product-img">
+                              <a href="course-details.html">
+                                <img
+                                  class="img-fluid"
+                                  alt="Img"
+                                  src="assets/img/course/course-02.jpg"
+                                />
+                              </a>
+                              <div class="price">
+                                <h3>$80 <span>$99.00</span></h3>
+                              </div>
+                            </div>
+                            <div class="product-content">
+                              <h3 class="title instructor-text">
+                                <a href="course-details.html"
+                                  >{{ c.title }}</a
+                                >
+                              </h3>
+                              <div
+                                class="course-info d-flex align-items-center"
+                              >
+                                <div
+                                  class="rating-img d-flex align-items-center"
+                                >
+                                  <img
+                                    src="assets/img/icon/icon-01.svg"
+                                    alt="Img"
+                                  />
+                                  <p>{{ c.startDate | date:'yyyy-MM-dd' }}</p>
+                                </div>
+                                <div
+                                  class="course-view d-flex align-items-center"
+                                >
+                                  <img
+                                    src="assets/img/icon/icon-02.svg"
+                                    alt="Img"
+                                  />
+                                  <p>{{ c.finishDate | date:'yyyy-MM-dd' }}</p>
+                                </div>
+                              </div>
+                              <div
+                                class="course-edit-btn d-flex align-items-center justify-content-between"
+                              >
+                                <a [routerLink]="['/edit-course',c.id]"
+                                  ><i class="bx bx-edit me-2"></i>Edit</a
+                                >
+                                <a [routerLink]="['/course-details',c.id]"
+                                  ><i class="bx bx-trash me-2"></i>Details</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="active-courses">
+                    <div class="row">
+                      <div class="col-xxl-4 col-md-6 d-flex">
+                        <div class="course-box flex-fill">
+                          <div class="product">
+                            <div class="product-img">
+                              <a href="course-details.html">
+                                <img
+                                  class="img-fluid"
+                                  alt="Img"
+                                  src="assets/img/course/course-02.jpg"
+                                />
+                              </a>
+                              <div class="price">
+                                <h3>$80 <span>$99.00</span></h3>
+                              </div>
+                            </div>
+                            <div class="product-content">
+                              <h3 class="title instructor-text">
+                                <a href="course-details.html"
+                                  >Wordpress for Beginners - Master
+                                  Wordpress Quickly</a
+                                >
+                              </h3>
+                              <div
+                                class="course-info d-flex align-items-center"
+                              >
+                                <div
+                                  class="rating-img d-flex align-items-center"
+                                >
+                                  <img
+                                    src="assets/img/icon/icon-01.svg"
+                                    alt="Img"
+                                  />
+                                  <p>12+ Lesson</p>
+                                </div>
+                                <div
+                                  class="course-view d-flex align-items-center"
+                                >
+                                  <img
+                                    src="assets/img/icon/icon-02.svg"
+                                    alt="Img"
+                                  />
+                                  <p>70hr 30min</p>
+                                </div>
+                              </div>
+                              <div
+                                class="course-edit-btn d-flex align-items-center justify-content-between"
+                              >
+                                <a href="#"
+                                  ><i class="bx bx-edit me-2"></i>Edit</a
+                                >
+                                <a href="#"
+                                  ><i class="bx bx-trash me-2"></i>Delete</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-xxl-4 col-md-6 d-flex">
+                        <div class="course-box flex-fill">
+                          <div class="product">
+                            <div class="product-img">
+                              <a href="course-details.html">
+                                <img
+                                  class="img-fluid"
+                                  alt="Img"
+                                  src="assets/img/course/course-03.jpg"
+                                />
+                              </a>
+                              <div class="price combo">
+                                <h3>FREE</h3>
+                              </div>
+                            </div>
+                            <div class="product-content">
+                              <h3 class="title instructor-text">
+                                <a href="course-details.html"
+                                  >Sketch from A to Z (2022): Become an app
+                                  designer</a
+                                >
+                              </h3>
+                              <div
+                                class="course-info d-flex align-items-center"
+                              >
+                                <div
+                                  class="rating-img d-flex align-items-center"
+                                >
+                                  <img
+                                    src="assets/img/icon/icon-01.svg"
+                                    alt="Img"
+                                  />
+                                  <p>10+ Lesson</p>
+                                </div>
+                                <div
+                                  class="course-view d-flex align-items-center"
+                                >
+                                  <img
+                                    src="assets/img/icon/icon-02.svg"
+                                    alt="Img"
+                                  />
+                                  <p>40hr 10min</p>
+                                </div>
+                              </div>
+                              <div
+                                class="course-edit-btn d-flex align-items-center justify-content-between"
+                              >
+                                <a href="#"
+                                  ><i class="bx bx-edit me-2"></i>Edit</a
+                                >
+                                <a href="#"
+                                  ><i class="bx bx-trash me-2"></i>Delete</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="complete-courses">
+                    <div class="row">
+                      <div class="col-xxl-4 col-md-6 d-flex">
+                        <div class="course-box flex-fill">
+                          <div class="product">
+                            <div class="product-img">
+                              <a href="course-details.html">
+                                <img
+                                  class="img-fluid"
+                                  alt="Img"
+                                  src="assets/img/course/course-04.jpg"
+                                />
+                              </a>
+                              <div class="price">
+                                <h3>$65 <span>$70.00</span></h3>
+                              </div>
+                            </div>
+                            <div class="product-content">
+                              <h3 class="title instructor-text">
+                                <a href="course-details.html"
+                                  >Learn Angular Fundamentals From beginning
+                                  to advance lavel</a
+                                >
+                              </h3>
+                              <div
+                                class="course-info d-flex align-items-center"
+                              >
+                                <div
+                                  class="rating-img d-flex align-items-center"
+                                >
+                                  <img
+                                    src="assets/img/icon/icon-01.svg"
+                                    alt="Img"
+                                  />
+                                  <p>15+ Lesson</p>
+                                </div>
+                                <div
+                                  class="course-view d-flex align-items-center"
+                                >
+                                  <img
+                                    src="assets/img/icon/icon-02.svg"
+                                    alt="Img"
+                                  />
+                                  <p>80hr 40min</p>
+                                </div>
+                              </div>
+                              <div
+                                class="course-edit-btn d-flex align-items-center justify-content-between"
+                              >
+                                <a href="#"
+                                  ><i class="bx bx-edit me-2"></i>Edit</a
+                                >
+                                <a href="#"
+                                  ><i class="bx bx-trash me-2"></i>Delete</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dash-pagination">
+            <div class="row align-items-center">
+              <div class="col-6">
+                <p>Page 1 of 2</p>
+              </div>
+              <div class="col-6">
+                <ul class="pagination">
+                  <li class="active">
+                    <a href="#">1</a>
+                  </li>
+                  <li>
+                    <a href="#">2</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bx bx-chevron-right"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

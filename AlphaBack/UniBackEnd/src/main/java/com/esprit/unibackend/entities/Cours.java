@@ -1,5 +1,6 @@
 package com.esprit.unibackend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,10 +25,13 @@ public class Cours {
     private String planification;
     private Date startDate;
     private Date finishDate;
+    private int searched;
 
     @ManyToOne
     private User owner;
 
+
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy="cours")
     private Set<Document> documents;
 

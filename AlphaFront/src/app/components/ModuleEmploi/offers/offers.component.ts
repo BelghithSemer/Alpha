@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OfferService } from 'src/app/Services/ModuleEmploi/offer.service';
 import { Offer } from 'src/app/models/Offer';
 
@@ -10,8 +11,11 @@ import { Offer } from 'src/app/models/Offer';
 export class OffersComponent {
 
   offers:Offer[] = [];
-  constructor(private os:OfferService){}
-
+  
+  constructor(private os:OfferService, private fb:FormBuilder){
+    
+  }
+  
   ngOnInit(){
     this.os.getOffers().subscribe((data)=>{
       this.offers = data;

@@ -1,0 +1,97 @@
+<section class="page-content course-sec">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12">
+          <div class="add-course-header">
+            <h2>Add New Offer</h2>
+            <div class="add-course-btns">
+              <ul class="nav">
+                <li>
+                  <a href="instructor-dashboard.html" class="btn btn-black"
+                    >Back to Offers</a
+                  >
+                </li>
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="widget-set">
+              
+              <div class="widget-content multistep-form">
+                <fieldset id="first">
+                  <div class="add-course-info">
+                    <div class="add-course-inner-header">
+                      <h4>Please fill the form</h4>
+                    </div>
+                    <div class="add-course-form">
+                        <form [formGroup]="addform">
+                            <div class="input-block">
+                              <label class="add-course-label">Company Name</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Company Name"
+                                formControlName="company"
+                              />
+                            </div>
+                          
+                            <div class="input-block">
+                              <label class="add-course-label">Duration</label>
+                              <input
+                                type="number"
+                                class="form-control"
+                                placeholder="two months"
+                                formControlName="duree"
+                              />
+                            </div>
+                          
+                            <div class="input-block">
+                              <label class="add-course-label">Date</label>
+                              <input
+                                type="date"
+                                class="form-control"
+                                formControlName="date"
+                              />
+                            </div>
+                          
+                            <div class="input-block">
+                              <label class="add-course-label">Type</label>
+                              <select class="form-control select" formControlName="type">
+                                <option value="">Select type</option>
+                                <option value="Formation">Formation</option>
+                                <option value="Stage">Stage</option>
+                                <option value="Emploi">Emploi</option>
+                              </select>
+                            </div>
+                          
+                            <div class="input-block">
+                              <label class="add-course-label">Description</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                formControlName="description"
+                              />
+                            </div>
+     
+                          </form>
+                          
+                    </div>
+                    <div class="widget-btn">
+                      <a class="btn btn-black" [routerLink]="['/offers']">Back</a>
+                      <a class="btn btn-info-light next_btn" (click)="onSubmit()">Submit</a>
+                    </div>
+                  </div>
+                </fieldset>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

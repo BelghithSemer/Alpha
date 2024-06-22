@@ -1,28 +1,27 @@
 package com.esprit.unibackend.config;
 
 
-import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.info.Contact;
-import io.swagger.v3.oas.models.info.Info;
+import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.MediaType;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 
 @Configuration
-public class SpringDocConfig {
-    @Bean
-    public OpenAPI springShopOpenAPI() {
-        return new OpenAPI()
-                .info(infoAPI());
+@EnableWebMvc
+public class SpringDocConfig implements WebMvcConfigurer {
+    @Override
+    public void addResourceHandlers(@NotNull ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/static/");
     }
 
-    public io.swagger.v3.oas.models.info.Info infoAPI() {
-        return new Info().title("PI-project")
-                .description("University Platform")
-                .contact(contactAPI())
-                .version("1");
-    }
-
-    public io.swagger.v3.oas.models.info.Contact contactAPI() {
-        return new Contact().name("Alpha Team");
+    @Override
+    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+        configurer.defaultContentType(MediaType.APPLICATION_JSON);
     }
 }

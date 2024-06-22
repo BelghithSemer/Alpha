@@ -1,5 +1,6 @@
 package com.esprit.unibackend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,13 +29,19 @@ public class User {
 
     private String role;
 
+
+    @JsonIgnore
     @OneToMany(mappedBy = "candidat", cascade = CascadeType.ALL)
     private Set<Candidacy> candidacies;
 
 
+
+    @JsonIgnore
     @OneToMany(mappedBy = "owner")
     private Set<Cours> courses;
 
+
+    @JsonIgnore
     @OneToMany(mappedBy = "creator")
     private Set<Reclamation> reclamations;
 }

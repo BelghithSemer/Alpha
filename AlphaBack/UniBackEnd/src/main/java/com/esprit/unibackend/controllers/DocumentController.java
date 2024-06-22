@@ -1,5 +1,6 @@
 package com.esprit.unibackend.controllers;
 
+import com.esprit.unibackend.entities.Cours;
 import com.esprit.unibackend.entities.Document;
 import com.esprit.unibackend.entities.User;
 import com.esprit.unibackend.services.DocumentServiceImpl;
@@ -10,10 +11,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 @AllArgsConstructor
 @Tag(name = "Document")
 @RequestMapping("/document")
+
 public class DocumentController {
 
     private final DocumentServiceImpl serv;
@@ -32,6 +34,10 @@ public class DocumentController {
     public Document Get(@PathVariable int id){
 
         return serv.Retrieve(id);
+    }
+    @PostMapping("/show/cours")
+    public List<Document> GetByCours(@RequestBody Cours cours){
+        return serv.getByCours(cours);
     }
 
     @GetMapping("/show")

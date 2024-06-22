@@ -22,6 +22,9 @@ public class CoursServiceImpl implements IService<Cours> {
         return repo.save(cours);
     }
 
+    public List<Cours> getByTitle(String title){
+        return repo.findAllByTitleLike(title);
+    }
     @Override
     public Cours Retrieve(int id) {
         return repo.findById(id).orElse(null);

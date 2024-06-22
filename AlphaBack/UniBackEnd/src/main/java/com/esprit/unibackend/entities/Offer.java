@@ -1,6 +1,7 @@
 package com.esprit.unibackend.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,6 +31,8 @@ public class Offer {
     private int duree;
     private Date date;
 
+
+    @JsonIgnore
     @OneToMany(mappedBy = "offer", cascade = CascadeType.ALL)
     private Set<Candidacy> candidacies;
 

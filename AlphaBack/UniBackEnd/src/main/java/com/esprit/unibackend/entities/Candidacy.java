@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 
@@ -26,6 +27,11 @@ public class Candidacy {
 
     @ManyToOne
     private User candidat;
+
+
+    private String cv;
+
+
 
 
 }

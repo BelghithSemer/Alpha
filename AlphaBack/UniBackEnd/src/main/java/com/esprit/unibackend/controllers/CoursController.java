@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -31,6 +32,23 @@ public class CoursController {
         return serv.Update(user);
     }
 
+    @GetMapping("serach/{title}")
+    public List<Cours> GetByTitle(@PathVariable String title){
+        List<Cours> searched = new ArrayList<>();
+        searched = serv.getByTitle(title);
+
+        if(!searched.isEmpty()){
+            int count  = searched.get(0).getSearched();
+            count++;
+            searched.get(0).setSearched(count);
+            System.out.println(searched.get(0).getSearched());
+            serv.Update(searched.get(0));
+        }
+
+
+
+        return searched;
+    }
     @GetMapping("/show/{id}")
     public Cours Get(@PathVariable int id){
 
