@@ -26,6 +26,11 @@ public class LivreController {
         return serv.Update(livre);
     }
 
+    @GetMapping("search/{title}")
+    public List<Livre> GetByTitle(@PathVariable String title){
+        return serv.findbyTitle(title);
+    }
+
     @GetMapping("/show/{id}")
     public Livre Get(@PathVariable int id){
 

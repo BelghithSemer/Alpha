@@ -40,6 +40,10 @@ public class LivreServiceImpl implements IService<Livre>{
         repo.deleteById(id);
     }
 
+    public List<Livre> findbyTitle(String title){
+        return repo.findAllByTitleLike(title);
+    }
+
 
 
 
