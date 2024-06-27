@@ -29,15 +29,13 @@
               <div class="col-lg-6">
                 <div class="d-flex align-items-center">
                   <div class="view-icons">
-                    <a href="course-grid.html" class="grid-view"
-                      ><i class="feather-grid"></i
-                    ></a>
-                    <a href="course-list.html" class="list-view active"
-                      ><i class="feather-list"></i
-                    ></a>
+                    
+                    <a [routerLink]="['/addbook']" class="list-view active"
+                      ><i class="fa-solid fa-plus"></i>
+                    </a>
                   </div>
                   <div class="show-result">
-                    <h4>Showing 1-9 of 50 results</h4>
+                    <h4>Add Book</h4>
                   </div>
                 </div>
               </div>
@@ -84,12 +82,11 @@
                       <img
                         class="img-fluid"
                         alt="Img"
-                        src="assets/img/course/course-10.jpg"
-                      />
+                        [src]="'http://localhost:8089/livre/' + book.cover" />
+
+                      
                     </a>
-                    <div class="price">
-                      <h3>$300 <span>$99.00</span></h3>
-                    </div>
+                    
                   </div>
                   <div class="product-content">
                     <div class="head-course-title">
@@ -102,7 +99,7 @@
                       <div
                         class="all-btn all-category d-flex align-items-center"
                       >
-                        <a href="checkout.html" class="btn btn-primary"
+                        <a [routerLink]="['/book-details',book.id]" class="btn btn-primary"
                           >Details</a
                         >
                       </div>

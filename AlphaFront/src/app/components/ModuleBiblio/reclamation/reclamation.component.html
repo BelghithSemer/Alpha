@@ -1,0 +1,92 @@
+<div class="breadcrumb-bar breadcrumb-bar-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-12">
+          <div class="breadcrumb-list">
+            <h2 class="breadcrumb-title">Reclamation</h2>
+            <nav aria-label="breadcrumb" class="page-breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="index-2.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Reclamation
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="container">
+      <div class="row">
+        
+
+        <div class="col-xl-9 col-lg-9">
+          <div class="settings-widget card-details">
+            <div class="settings-menu p-0">
+              <div class="profile-heading">
+                <h3>Reclamation</h3>
+              </div>
+              <div class="checkout-form">
+                <div class="review-wrap" *ngFor="let rec of reclamations">
+                  <div class="review-user-info">
+                    <div class="reviewer">
+                      <div class="review-img">
+                        <a href="javascript:void(0);"
+                          ><img src="assets/img/user/user16.jpg" alt="img"
+                        /></a>
+                      </div>
+                      <div class="reviewer-info">
+                        <h6>
+                          <a href="javascript:void(0);">Ronald Richard</a>
+                        </h6>
+                        <p>{{ rec.date | date:'yyyy-MM-dd' }}</p>
+                      </div>
+                    </div>
+                    <div class="reviewer-rating">
+                      <p>{{ rec.category }}</p>
+                    </div>
+                  </div>
+                  <div class="review-content">
+                    <p>
+                      {{ rec.description }}
+                    </p>
+                    <div class="review-action">
+                      <a [routerLink]="['/edit-rec', rec.id]">Edit</a>
+                      <a href="javascript:void:0;">Delete</a>
+                    </div>
+                  </div>
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+          <div class="dash-pagination">
+            <div class="row align-items-center">
+              <div class="col-6">
+                <p>Page 1 of 2</p>
+              </div>
+              <div class="col-6">
+                <ul class="pagination">
+                  <li class="active">
+                    <a href="#">1</a>
+                  </li>
+                  <li>
+                    <a href="#">2</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bx bx-chevron-right"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

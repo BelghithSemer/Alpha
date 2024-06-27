@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Entity
 @Getter
 @Setter
@@ -17,11 +19,12 @@ public class Reclamation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    String description;
-    String category;
+    private String description;
+    private String category;
+    private Date date;
 
     @Enumerated(EnumType.STRING)
-    StatusRec status;
+    private StatusRec status;
 
     @ManyToOne
     private User creator;

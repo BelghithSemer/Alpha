@@ -18,6 +18,11 @@ import { AddCourseComponent } from './components/ModuleCours/add-course/add-cour
 import { EditCourseComponent } from './components/ModuleCours/edit-course/edit-course.component';
 import { AddDocumentComponent } from './components/ModuleCours/add-document/add-document.component';
 import { BooksComponent } from './components/ModuleBiblio/books/books.component';
+import { AddBookComponent } from './components/ModuleBiblio/add-book/add-book.component';
+import { BookDetailsComponent } from './components/ModuleBiblio/book-details/book-details.component';
+import { AddReclamationComponent } from './components/ModuleBiblio/add-reclamation/add-reclamation.component';
+import { ReclamationComponent } from './components/ModuleBiblio/reclamation/reclamation.component';
+import { EditReclamationComponent } from './components/ModuleBiblio/edit-reclamation/edit-reclamation.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { BooksComponent } from './components/ModuleBiblio/books/books.component'
     AddCourseComponent,
     EditCourseComponent,
     AddDocumentComponent,
-    BooksComponent
+    BooksComponent,
+    AddBookComponent,
+    BookDetailsComponent,
+    AddReclamationComponent,
+    ReclamationComponent,
+    EditReclamationComponent
   ],
   imports: [
     BrowserModule,

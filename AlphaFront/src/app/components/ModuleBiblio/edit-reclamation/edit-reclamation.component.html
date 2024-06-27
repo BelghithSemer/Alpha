@@ -1,0 +1,50 @@
+<section class="page-content course-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+
+<div class="card comment-sec">
+    <div class="card-body">
+      <h5 class="subs-title">Edit A Reclamation</h5>
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          
+          <div class="col-md-6">
+            <div class="input-block">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Category"
+                formControlName="category"
+              />
+              <div *ngIf="editForm?.get('category')?.invalid && editForm?.get('category')?.touched" class="error">
+                Category is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="input-block">
+          <textarea
+            rows="4"
+            class="form-control"
+            placeholder="Description"
+            formControlName="description"
+          ></textarea>
+          <div *ngIf="editForm?.get('description')?.invalid && editForm?.get('description')?.touched" class="error">
+            Description is required
+          </div>
+        </div>
+        <div class="submit-section">
+          <button class="btn submit-btn" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+      
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</section>

@@ -12,6 +12,11 @@ import { AddCourseComponent } from './components/ModuleCours/add-course/add-cour
 import { EditCourseComponent } from './components/ModuleCours/edit-course/edit-course.component';
 import { AddDocumentComponent } from './components/ModuleCours/add-document/add-document.component';
 import { BooksComponent } from './components/ModuleBiblio/books/books.component';
+import { AddBookComponent } from './components/ModuleBiblio/add-book/add-book.component';
+import { BookDetailsComponent } from './components/ModuleBiblio/book-details/book-details.component';
+import { AddReclamationComponent } from './components/ModuleBiblio/add-reclamation/add-reclamation.component';
+import { ReclamationComponent } from './components/ModuleBiblio/reclamation/reclamation.component';
+import { EditReclamationComponent } from './components/ModuleBiblio/edit-reclamation/edit-reclamation.component';
 
 const routes: Routes = [
   {path:'offers', component:OffersComponent},
@@ -25,7 +30,12 @@ const routes: Routes = [
   { path: 'add-course', component: AddCourseComponent },
   { path: 'edit-course/:id', component: EditCourseComponent },
   { path: 'add-document/:id', component: AddDocumentComponent },
-  { path: 'books', component: BooksComponent}
+  { path: 'books', component: BooksComponent},
+  { path: 'addbook', component: AddBookComponent},
+  { path: 'book-details/:id', component: BookDetailsComponent},
+  { path: 'add-reclamation', component: AddReclamationComponent},
+  { path : 'reclamation', component: ReclamationComponent},
+  { path : 'edit-rec/:id', component : EditReclamationComponent}
 ];
 
 

@@ -13,12 +13,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            
             "outputPath": "dist/alpha-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
+            
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -28,6 +30,7 @@
               "src/styles.css"
             ],
             "scripts": []
+            
           },
           "configurations": {
             "production": {

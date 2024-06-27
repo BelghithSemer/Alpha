@@ -11,4 +11,7 @@ export class Book{
     type!:string;
 
     description!:string;
+
+    cover!:string;
+    file!:string;
 }

@@ -32,4 +32,8 @@ public class Livre {
 
     private String Description;
 
+    private String cover;
+
+    private String file;
+
 }
