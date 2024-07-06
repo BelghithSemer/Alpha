@@ -27,7 +27,11 @@ public class Document {
     private String content;
     private Date createdate;
     private Date updatedate;
+    private String docpath;
 
+
+    @Column(length = 100000)
+    private String signature;
 
 
     @ManyToOne

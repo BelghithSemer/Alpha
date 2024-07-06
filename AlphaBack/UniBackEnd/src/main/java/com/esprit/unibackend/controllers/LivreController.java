@@ -1,4 +1,6 @@
 package com.esprit.unibackend.controllers;
+import com.esprit.unibackend.entities.Comment;
+import com.esprit.unibackend.services.CommentServiceImpl;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import com.esprit.unibackend.entities.Livre;
@@ -16,6 +18,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -32,6 +35,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/livre")
 public class LivreController {
     private final LivreServiceImpl serv;
+    private final CommentServiceImpl commentService;
     private final String imageDirectory = "C:/Users/ASUS/Alpha/Books";
 
     private final DropboxService dropboxService;
@@ -62,6 +66,27 @@ public class LivreController {
 
         return serv.Retrieve();
     }
+    @GetMapping("/getRecomendation")
+    public List<Livre> getRecomendation() {
+        List<Livre> allBooks = serv.Retrieve();
+        List<Livre> recommendation = new ArrayList<>();
+
+        for (Livre book : allBooks) {
+            List<Comment> comments = commentService.findByBook(book);
+            int rate = 0;
+
+            for (Comment c : comments) {
+                rate += c.getRate();
+            }
+
+            if (!comments.isEmpty() && (rate / comments.size()) >= 3) {
+                recommendation.add(book);
+            }
+        }
+
+        return recommendation;
+    }
+
 
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable int id){

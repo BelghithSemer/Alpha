@@ -23,6 +23,11 @@ import { BookDetailsComponent } from './components/ModuleBiblio/book-details/boo
 import { AddReclamationComponent } from './components/ModuleBiblio/add-reclamation/add-reclamation.component';
 import { ReclamationComponent } from './components/ModuleBiblio/reclamation/reclamation.component';
 import { EditReclamationComponent } from './components/ModuleBiblio/edit-reclamation/edit-reclamation.component';
+import { DocDetailsComponent } from './components/ModuleCours/doc-details/doc-details.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { SignaturePadModule } from 'angular-signature-pad-v2';
+import { StatsComponent } from './components/ModuleEmploi/stats/stats.component';
+import { AdminNavbarComponent } from './components/shared/admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -44,15 +49,21 @@ import { EditReclamationComponent } from './components/ModuleBiblio/edit-reclama
     BookDetailsComponent,
     AddReclamationComponent,
     ReclamationComponent,
-    EditReclamationComponent
+    EditReclamationComponent,
+    DocDetailsComponent,
+    StatsComponent,
+    AdminNavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PdfViewerModule,
+    SignaturePadModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+// End of  Selection
 export class AppModule { }

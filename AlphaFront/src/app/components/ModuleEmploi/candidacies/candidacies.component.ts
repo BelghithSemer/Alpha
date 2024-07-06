@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OfferService } from 'src/app/Services/ModuleEmploi/offer.service';
@@ -15,7 +16,7 @@ export class CandidaciesComponent {
     id!: number;
 
 
-    constructor(private os:OfferService, private route:ActivatedRoute){
+    constructor(private os:OfferService, private route:ActivatedRoute,private http:HttpClient){
         
     }
 
@@ -55,7 +56,10 @@ export class CandidaciesComponent {
             this.candidacies=data;
             console.log(data);
             this.candidacies=this.candidacies;
-            
+            /// calculating matching score 
+            this.candidacies.forEach((candidacy) => {
+              this.calculateScore(candidacy);
+            });
           });
         },
         (error) => {
@@ -75,6 +79,22 @@ export class CandidaciesComponent {
   
       return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}.${milliseconds}`;
     }
+
+    calculateScore(candidacy: Candidacy): void {
+      const newPath = `C:/Users/ASUS/Alpha/CandidacyCv/${candidacy.cv}`;
+      console.log(`Calculating score for CV path: ${newPath}`);
+      this.http.get<number>(`http://localhost:8089/candidacy/MatchingScore/${this.offer.id}?path=${encodeURIComponent(newPath)}`)
+        .subscribe(
+          (data) => {
+            console.log(`Score matching for ${newPath}:`, data);
+            candidacy.score = data;
+          },
+          (error) => {
+            console.error(`Error calculating score for ${newPath}:`, error);
+          }
+        );
+    }
+    
 
 
 }

@@ -10,8 +10,10 @@ export class Candidacy{
     offer!:Offer;
 
     
-    candidat!:User;
+    candidat:User |undefined;
 
 
     cv!:string;
+
+    score!:number;
 }

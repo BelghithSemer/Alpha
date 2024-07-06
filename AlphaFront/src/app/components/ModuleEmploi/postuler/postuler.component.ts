@@ -16,7 +16,7 @@ export class PostulerComponent implements OnInit {
   selectedFile!: File;
   offer!: Offer;
   id!: number;
-  user!: User;
+  user !: User;
   candidacy!: Candidacy;
 
   constructor(private fb: FormBuilder, private os: OfferService, private route: ActivatedRoute,private router:Router) {
@@ -26,16 +26,7 @@ export class PostulerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = {
-      id: 2,
-      name: "Belghith Semer",
-      email: "semer@gmail.com",
-      password: "string",
-      phone: 28194715,
-      adress: "string",
-      role: "student",
-      studentClass: "string"
-    };
+   
     this.offer = {
       id: 0,
       description: "string",
@@ -46,12 +37,23 @@ export class PostulerComponent implements OnInit {
       candidacies: []
     
     };
+    this.user = {
+      id: 1,
+      name: "Semer Belghith",
+      email: "semer.belghith@esprit.tn",
+      password: "12345678",
+      phone: 28194715,
+      adress: "Ariana Soghra ",
+      role: "Student",
+      studentClass: "4 SAE"
+    }
     this.candidacy = {
       id: 0,
       candidat: this.user,
       offer: this.offer,
       date: new Date(),
-      cv: "string"
+      cv: "string",
+      score:0
     };
 
     const idString = this.route.snapshot.paramMap.get('id');
@@ -84,7 +86,7 @@ export class PostulerComponent implements OnInit {
     this.os.addCV(this.selectedFile).subscribe(
       (data) => {
         console.log(data);
-        this.candidacy.candidat = this.user;
+        
         this.candidacy.cv = data;
         this.candidacy.offer = this.offer;
         this.candidacy.date = new Date();

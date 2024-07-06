@@ -17,6 +17,8 @@ import { BookDetailsComponent } from './components/ModuleBiblio/book-details/boo
 import { AddReclamationComponent } from './components/ModuleBiblio/add-reclamation/add-reclamation.component';
 import { ReclamationComponent } from './components/ModuleBiblio/reclamation/reclamation.component';
 import { EditReclamationComponent } from './components/ModuleBiblio/edit-reclamation/edit-reclamation.component';
+import { DocDetailsComponent } from './components/ModuleCours/doc-details/doc-details.component';
+import { StatsComponent } from './components/ModuleEmploi/stats/stats.component';
 
 const routes: Routes = [
   {path:'offers', component:OffersComponent},
@@ -35,7 +37,9 @@ const routes: Routes = [
   { path: 'book-details/:id', component: BookDetailsComponent},
   { path: 'add-reclamation', component: AddReclamationComponent},
   { path : 'reclamation', component: ReclamationComponent},
-  { path : 'edit-rec/:id', component : EditReclamationComponent}
+  { path : 'edit-rec/:id', component : EditReclamationComponent},
+  { path: 'doc-details/:id/:docId', component: DocDetailsComponent },
+  { path : 'Candidacy-stats', component : StatsComponent}
 ];
 
 

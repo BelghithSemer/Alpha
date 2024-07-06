@@ -22,7 +22,9 @@ public class Offer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(length = 100000)
     private String description;
+
     private String company;
 
     @Enumerated(EnumType.STRING)

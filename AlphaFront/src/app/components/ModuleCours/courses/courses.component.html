@@ -1,3 +1,6 @@
+<app-navbar></app-navbar>
+
+
 <div class="page-content">
     <div class="container">
       <div class="row">
@@ -147,27 +150,48 @@
           <div class="settings-widget card-info">
             <div class="settings-menu p-0">
               
-              <div class="col-lg-6">
-                <div class="show-filter add-course-info">
-                  <form action="#">
-                    <div class="row gx-2 align-items-center">
-                      <div class="col-md-6  col-item">
-                        <h3>Courses</h3>
-                        <p>Manage your courses and its updates</p>
-                      </div>
-                      <div class="col-md-6 col-lg-6 col-item">
-                        <div class="search-group">
-                          <i class="feather-search"></i>
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Search our courses"
-                          />
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="d-flex align-items-center">
+                    
+                    <div class="show-result">
+                      <h4>Search Book</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="show-filter add-course-info">
+                    <form [formGroup]="searchForm">
+                      <div class="row gx-2 align-items-center">
+                        <div class="col-md-6 col-item">
+                          <div class="search-group">
+                            <i class="feather-search"></i>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Search our courses"
+                              formControlName="searchQuery"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-item">
+                          <div class="input-block select-form mb-0">
+                            <select
+                              class="form-select select"
+                              formControlName="sortOrder"
+                            >
+                              <option>Newly published</option>
+                              <option>published 1</option>
+                              <option>published 2</option>
+                              <option>published 3</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
-                      
-                    </div>
-                  </form>
+                    </form>
+                    
+                    
+                  </div>
                 </div>
               </div>
               <div class="checkout-form pb-0">

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Book } from 'src/app/models/Book';
+import { Comment } from 'src/app/models/Comment';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +47,19 @@ export class BookService {
     return this.http.get(`http://localhost:8089/livre/download?path=${path}`, { responseType: 'arraybuffer' });
     //return this.http.get(`http://localhost:8089/livre/download?path=${path}`);
   }
+
+
+  addComment(comment: Comment){
+    return this.http.post('http://localhost:8089/comment/add',comment);
+  }
   
+  getComments(id:number){
+    return this.http.get<Comment[]>(`http://localhost:8089/comment/getByBook/${id}`);
+  }
+
+  getrecommendation(){
+    return this.http.get<Book[]>('http://localhost:8089/livre/getRecomendation');
+  }
   
 
 }

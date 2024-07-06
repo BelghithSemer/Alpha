@@ -34,6 +34,9 @@ public class User {
     @OneToMany(mappedBy = "candidat", cascade = CascadeType.ALL)
     private Set<Candidacy> candidacies;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Comment> comments;
 
 
     @JsonIgnore

@@ -11,6 +11,7 @@ export class Document{
     content!:string;
     createdate!:Date;
     updatedate!:Date;
-
+    docpath!:string;
+    signature!: string;
     cours:cours | undefined;
 }

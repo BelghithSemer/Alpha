@@ -1,3 +1,8 @@
+
+<app-navbar></app-navbar>
+
+
+
 <div class="breadcrumb-bar">
   <div class="container">
     <div class="row">
@@ -110,7 +115,7 @@
                         <th>Date</th>
                         <th>Last Update</th>
                         
-                        <th></th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -133,11 +138,7 @@
                         <td>{{ document.updatedate| date:'yyyy-MM-dd' }}</td>
           
                         <td>
-                          <a
-                            href="javascript:void(0);"
-                            class="action-icon"
-                            ><i class="bx bxs-download"></i
-                          ></a>
+                          <a  [routerLink]="['/doc-details',cours.id,document.id]" class="add-course btn-primary">Details</a>
                         </td>
                       </tr>
                       

@@ -39,5 +39,18 @@ export class OfferService {
     return this.http.post<Candidacy[]>('http://localhost:8089/candidacy/showcandidacies',offer);
   }
 
+  /// Stats Componenet 
+
+  getTotalApplications()  {
+    return this.http.get<number>('http://localhost:8089/candidacy/totalApplications');
+  }
+
+  getPopularOffers(){
+    return this.http.get<any>('http://localhost:8089/candidacy/popularOffers');
+  }
+
+  getCandidateStatistics() {
+    return this.http.get<any>('http://localhost:8089/candidacy/candidateStatistics');
+  }
 
 }

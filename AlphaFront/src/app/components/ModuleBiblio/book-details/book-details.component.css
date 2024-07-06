@@ -1,0 +1,13 @@
+.fa-star, .fa-star-o, .fas.fa-star, .far.fa-star {
+    cursor: pointer;
+    color: gold;
+    font-size: 24px;
+  }
+
+  span {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 25px;
+    text-align: center;
+    width: 25px;
+  }
