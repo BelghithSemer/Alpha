@@ -1,7 +1,4 @@
 
-Mémoire mise à jour
-Sure, here is a brief description for your project:
-
 Project Description: University Management System
 
 The Uni Management System is a comprehensive platform designed to streamline various aspects of university operations. The system is divided into three key modules:
